@@ -44,7 +44,7 @@ const ProgressBar = ({ value, size }) => {
       aria-valuenow={value}
       style={wrapperStyles}
     >
-      <VisuallyHidden>{value}</VisuallyHidden>
+      <VisuallyHidden>{value}%</VisuallyHidden>
       <BarInnerWrapper>
         <Bar style={styles} />
       </BarInnerWrapper>
@@ -64,6 +64,7 @@ const BarWrapper = styled.div`
   border-radius: var(--border-radius);
   height: var(--height);
   padding: var(--padding);
+  background-color: ${COLORS.transparentGray15};
   
 `;
 
