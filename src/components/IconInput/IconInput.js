@@ -6,6 +6,15 @@ import { COLORS } from '../../constants';
 import Icon from '../Icon';
 import VisuallyHidden from '../VisuallyHidden';
 
+const InputWrapper = styled.label`
+  display: block;
+  width: ${props => props.width};
+`;
+
+const Input = styled.input`
+
+`;
+
 const IconInput = ({
   label,
   icon,
@@ -13,7 +22,13 @@ const IconInput = ({
   size,
   placeholder,
 }) => {
-  return 'TODO';
+  return (
+    <InputWrapper width={width}>
+      <Icon id={icon} />
+      <VisuallyHidden>{label}</VisuallyHidden>
+      <Input type='text' placeholder={placeholder} />
+    </InputWrapper>
+  );
 };
 
 export default IconInput;
