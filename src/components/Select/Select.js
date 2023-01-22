@@ -17,6 +17,15 @@ const SelectWrapper = styled.label`
   gap: 24px; */
 `
 
+const IconComposition = styled(Icon)`
+ position: absolute;
+ top: 0;
+ right: 12px;
+ pointer-events: none;
+  color: #656565;
+
+`
+
 const CustomSelect = styled.select`
   appearance: none;
   border: none;
@@ -24,16 +33,24 @@ const CustomSelect = styled.select`
   padding: 12px 52px 12px 16px;
   border-radius: 8px;
   width: fit-content ;
+  color: #656565;
+
+  &:focus {
+    outline: 1px solid #4374CB;
+  }
+
+  &:hover {
+    color: #000;
+  }
+
+  &:hover + ${IconComposition} {
+    color: #000;
+  }
 `
 
 
 
-const IconComposition = styled(Icon)`
- position: absolute;
- top: 0;
- right: 12px;
- pointer-events: none;
-`
+
 
 const Select = ({ label, value, onChange, children }) => {
   const displayedValue = getDisplayedValue(value, children)
